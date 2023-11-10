@@ -15,7 +15,10 @@ public class WebSecurityConfiguration {
 		http.authorizeHttpRequests((requests) -> requests
 						.requestMatchers("/", "/home").permitAll()
 						.anyRequest().authenticated()
-				);
+				).formLogin((form) -> form
+						.loginPage("/login")
+						.permitAll()
+		        );
 		return http.build();
 	}
 }
