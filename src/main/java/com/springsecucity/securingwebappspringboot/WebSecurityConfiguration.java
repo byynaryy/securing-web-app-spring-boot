@@ -34,7 +34,7 @@ public class WebSecurityConfiguration {
 						.password("password")
 						.roles("USER")
 						.build();
-
+		System.out.println("This is my Encoded password: "+user.getPassword());
 		return new InMemoryUserDetailsManager(user);
 	}
 }
